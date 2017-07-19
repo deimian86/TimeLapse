@@ -9,7 +9,7 @@ Download
 
 [ ![Download](https://api.bintray.com/packages/deimian86/TimeLapse/time-lapse/images/download.svg?version=0.0.1) ](https://bintray.com/deimian86/TimeLapse/time-lapse/0.0.1/link)
 
-Add the dependency to your module's build.gradle:
+Or add the dependency to your module's build.gradle:
 ```groovy
 compile 'com.deimian86:time-lapse:0.0.1'
 ```
