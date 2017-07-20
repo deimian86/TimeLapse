@@ -7,11 +7,11 @@ A small library that transform a time lapse between two Date objects into a huma
 Download
 --------
 
-[ ![Download](null/packages/deimian86/TimeLapse/time-lapse/images/download.svg?version=0.0.1) ](https://bintray.com/deimian86/TimeLapse/time-lapse/0.0.1/link)
+[ ![Download](https://api.bintray.com/packages/deimian86/TimeLapse/time-lapse/images/download.svg) ](https://bintray.com/deimian86/TimeLapse/time-lapse/_latestVersion)
 
 Add the dependency to your module's build.gradle:
 ```groovy
-compile 'com.deimian86:time-lapse:0.0.1'
+compile 'com.deimian86:time-lapse:0.0.4'
 ```
 
 License

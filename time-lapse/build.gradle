@@ -1,0 +1,111 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    implementation 'com.android.support:appcompat-v7:26.0.0-beta2'
+    testImplementation 'junit:junit:4.12'
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+
+group = 'com.deimian86'
+version = '0.0.4'
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            name 'TimeLapse'
+            description 'A small library that transform a time lapse between two Date objects into a human-readable string'
+            url 'https://github.com/deimian86/TimeLapse'
+            inceptionYear '2017'
+
+            packaging 'aar'
+            groupId 'com.deimian86'
+            artifactId 'time-lapse'
+            version '0.0.4'
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                }
+            }
+            scm {
+                connection 'https://github.com/deimian86/TimeLapse.git'
+                url 'https://github.com/deimian86/TimeLapse'
+
+            }
+            developers {
+                developer {
+                    id = 'deimian86'
+                    name 'Damián González'
+                }
+            }
+        }
+    }
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = 'TimeLapse'
+        name = 'time-lapse'
+        userOrg = 'deimian86'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/deimian86/TimeLapse.git'
+        publish = true
+        version {
+            name = '0.0.4'
+            desc = 'TimeLapse 0.0.4'
+            released = new Date()
+            vcsTag = 'v0.0.4'
+        }
+    }
+}

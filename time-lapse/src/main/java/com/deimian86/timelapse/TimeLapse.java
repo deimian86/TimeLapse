@@ -1,4 +1,4 @@
-package com.deimian86.timelapse.library;
+package com.deimian86.timelapse;
 
 /**
  * Created by deimian86 on 19/07/2017.

@@ -1,4 +1,4 @@
-package com.deimian86.timelapse.library;
+package com.deimian86.timelapse;
 
 import org.junit.Test;
 

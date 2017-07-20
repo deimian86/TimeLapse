@@ -1,4 +1,4 @@
-package com.deimian86.timelapse.library;
+package com.deimian86.timelapse;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.deimian86.timelapse.library.test", appContext.getPackageName());
+        assertEquals("com.deimian86.timelapse.test", appContext.getPackageName());
     }
 }
