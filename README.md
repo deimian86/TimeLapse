@@ -17,7 +17,7 @@ compile 'com.deimian86:time-lapse:0.0.4'
 License
 --------
 
-    Copyright 2013 Square, Inc.
+    Copyright 2017 deimian86
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
