@@ -1,6 +1,6 @@
 TimeLapse
 =======
-A small library that transform a time lapse between two Date objects into a human-readable string
+A small library that transform a time lapse between now and a Date object into a human-readable string
 
 
 
