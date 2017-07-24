@@ -2,8 +2,6 @@ TimeLapse
 =======
 A small library that transform a time lapse between now and a Date object into a human-readable string
 
-
-
 Download
 --------
 
@@ -11,7 +9,16 @@ Download
 
 Add the dependency to your module's build.gradle:
 ```groovy
-compile 'com.deimian86:time-lapse:0.0.4'
+compile 'com.deimian86:time-lapse:0.0.5'
+```
+
+Usage
+----
+
+In code:
+```groovy
+TextView txtView = view.findViewById(R.id.textView);
+txtView.setText(new TimeLapse().getLapse(context, date, Locale.ENGLISH));
 ```
 
 License
