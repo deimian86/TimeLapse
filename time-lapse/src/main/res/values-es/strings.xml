@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TimeLapse</string>
+    <string name="lapse_moments_ago">Hace un momento</string>
+    <string name="lapse_minutes_ago">Hace %1s minutos</string>
+    <string name="lapse_hour_ago">Hace %1s hora</string>
+    <string name="lapse_hours_ago">Hace %1s horas</string>
+    <string name="lapse_day_ago">Hace %1s día</string>
+    <string name="lapse_days_ago">Hace %1s días</string>
+    <string name="lapse_week_ago">Hace una semana</string>
+    <string name="lapse_weeks_ago">Hace %1s semanas</string>
+</resources>

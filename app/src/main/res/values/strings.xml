@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">TimeLapse</string>
+
+    <string name="dialog_1">You fight like a dairy farmer!</string>
+    <string name="dialog_2">How appropriate! You fight like a cow!</string>
+    <string name="dialog_3">I once owned a dog that was smarter than you.</string>
+    <string name="dialog_4">He must have taught you everything you know.</string>
+    <string name="dialog_5">There are no words for how disgusting you are.</string>
+    <string name="dialog_6">Yes there are. You just never learned them.</string>
+    <string name="dialog_7">Soon you\'ll be wearing my sword like a shish kebab!</string>
+    <string name="dialog_8">First you better stop waving it about like a feather duster.</string>
+
+    <string name="name_1">Guybrush Threepwood</string>
+    <string name="name_2">LeChuck</string>
+
 </resources>

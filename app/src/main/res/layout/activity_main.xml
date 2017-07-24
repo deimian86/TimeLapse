@@ -4,81 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     android:orientation="vertical"
     android:gravity="center"
     tools:context="com.deimian86.timelapse.MainActivity">
 
-    <TextView
-        android:id="@+id/txtView1"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:lines="1"
-        android:text="@string/app_name"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/txtView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:lines="1"
-        android:text="@string/app_name"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/txtView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:lines="1"
-        android:text="@string/app_name"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/txtView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:lines="1"
-        android:text="@string/app_name"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/txtView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:lines="1"
-        android:text="@string/app_name"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/txtView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:lines="1"
-        android:text="@string/app_name"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/txtView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:lines="1"
-        android:text="@string/app_name"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/txtView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:lines="1"
-        android:text="@string/app_name"
-        android:textSize="18sp" />
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
 
 </LinearLayout>

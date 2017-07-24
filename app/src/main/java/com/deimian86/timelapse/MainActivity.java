@@ -2,40 +2,97 @@ package com.deimian86.timelapse;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private CommentAdapter adapter;
+    private List<Comment> commentList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView txtView1 = findViewById(R.id.txtView1);
-        txtView1.setText(new TimeLapse().getLapse(getApplicationContext(), minutesAgo(5)));
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        TextView txtView2 = findViewById(R.id.txtView2);
-        txtView2.setText(new TimeLapse().getLapse(getApplicationContext(), minutesAgo(15)));
+        commentList = new ArrayList<>();
+        adapter = new CommentAdapter(this, commentList);
 
-        TextView txtView3 = findViewById(R.id.txtView3);
-        txtView3.setText(new TimeLapse().getLapse(getApplicationContext(), hoursAgo(1)));
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
 
-        TextView txtView4 = findViewById(R.id.txtView4);
-        txtView4.setText(new TimeLapse().getLapse(getApplicationContext(), hoursAgo(3)));
+        prepareComments();
+    }
 
-        TextView txtView5 = findViewById(R.id.txtView5);
-        txtView5.setText(new TimeLapse().getLapse(getApplicationContext(), daysAgo(1)));
+    private void prepareComments() {
 
-        TextView txtView6 = findViewById(R.id.txtView6);
-        txtView6.setText(new TimeLapse().getLapse(getApplicationContext(), daysAgo(3)));
+        Comment c = new Comment();
+        c.setAuthorName(getString(R.string.name_1));
+        c.setCommentString(getString(R.string.dialog_1));
+        c.setCommentDate(daysAgo(14));
+        c.setAuthorAvatar(getDrawable(R.drawable.guybrush));
+        commentList.add(c);
 
-        TextView txtView7 = findViewById(R.id.txtView7);
-        txtView7.setText(new TimeLapse().getLapse(getApplicationContext(), daysAgo(7)));
+        c = new Comment();
+        c.setAuthorName(getString(R.string.name_2));
+        c.setCommentString(getString(R.string.dialog_2));
+        c.setCommentDate(daysAgo(7));
+        c.setAuthorAvatar(getDrawable(R.drawable.lechuck));
+        commentList.add(c);
 
-        TextView txtView8 = findViewById(R.id.txtView8);
-        txtView8.setText(new TimeLapse().getLapse(getApplicationContext(), daysAgo(21)));
+        c = new Comment();
+        c.setAuthorName(getString(R.string.name_1));
+        c.setCommentString(getString(R.string.dialog_3));
+        c.setCommentDate(daysAgo(3));
+        c.setAuthorAvatar(getDrawable(R.drawable.guybrush));
+        commentList.add(c);
+
+        c = new Comment();
+        c.setAuthorName(getString(R.string.name_2));
+        c.setCommentString(getString(R.string.dialog_4));
+        c.setCommentDate(daysAgo(1));
+        c.setAuthorAvatar(getDrawable(R.drawable.lechuck));
+        commentList.add(c);
+
+        c = new Comment();
+        c.setAuthorName(getString(R.string.name_1));
+        c.setCommentString(getString(R.string.dialog_5));
+        c.setCommentDate(hoursAgo(3));
+        c.setAuthorAvatar(getDrawable(R.drawable.guybrush));
+        commentList.add(c);
+
+        c = new Comment();
+        c.setAuthorName(getString(R.string.name_2));
+        c.setCommentString(getString(R.string.dialog_6));
+        c.setAuthorAvatar(getDrawable(R.drawable.lechuck));
+        c.setCommentDate( hoursAgo(1));
+        commentList.add(c);
+
+        c = new Comment();
+        c.setAuthorName(getString(R.string.name_1));
+        c.setCommentString(getString(R.string.dialog_7));
+        c.setAuthorAvatar(getDrawable(R.drawable.guybrush));
+        c.setCommentDate(minutesAgo(15));
+        commentList.add(c);
+
+        c = new Comment();
+        c.setAuthorName(getString(R.string.name_2));
+        c.setCommentString(getString(R.string.dialog_8));
+        c.setAuthorAvatar(getDrawable(R.drawable.lechuck));
+        c.setCommentDate(minutesAgo(5));
+        commentList.add(c);
+
+        adapter.notifyDataSetChanged();
     }
 
     private Date daysAgo(int i) {

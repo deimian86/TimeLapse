@@ -1,16 +1,11 @@
 <resources>
     <string name="app_name">TimeLapse</string>
-
     <string name="lapse_moments_ago">A moment ago</string>
     <string name="lapse_minutes_ago">%1s minutes ago</string>
-
     <string name="lapse_hour_ago">%1s hour ago</string>
     <string name="lapse_hours_ago">%1s hours ago</string>
-
     <string name="lapse_day_ago">%1s day ago</string>
     <string name="lapse_days_ago">%1s days ago</string>
-
     <string name="lapse_week_ago">one week ago</string>
     <string name="lapse_weeks_ago">%1s weeks ago</string>
-
 </resources>
