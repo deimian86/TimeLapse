@@ -2,6 +2,9 @@ TimeLapse
 =======
 A small library that transform a time lapse between now and a Date object into a human-readable string
 
+![TimeLapse screenshot1](https://raw.githubusercontent.com/deimian86/TimeLapse/master/screenshot1.png)
+![TimeLapse screenshot2](https://raw.githubusercontent.com/deimian86/TimeLapse/master/screenshot2.png)
+
 Download
 --------
 
