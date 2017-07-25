@@ -20,7 +20,7 @@ Usage
 
 In code:
 ```groovy
-TextView txtView = view.findViewById(R.id.textView);
+TextView txtView = findViewById(R.id.txtView);
 txtView.setText(new TimeLapse().getLapse(context, date, Locale.ENGLISH));
 ```
 
