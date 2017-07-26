@@ -1,6 +1,6 @@
 TimeLapse
 =======
-A small library that transform a time lapse between now and a Date object into a human-readable string
+A small library that calculates and transform the time elapsed between now and a Date object into a human-readable string to use wherever you want. 
 
 ![TimeLapse screenshot1](https://raw.githubusercontent.com/deimian86/TimeLapse/master/screenshot1.png)
 ![TimeLapse screenshot2](https://raw.githubusercontent.com/deimian86/TimeLapse/master/screenshot2.png)
@@ -20,7 +20,7 @@ Usage
 
 In code:
 ```groovy
-TextView txtView = view.findViewById(R.id.textView);
+TextView txtView = findViewById(R.id.txtView);
 txtView.setText(new TimeLapse().getLapse(context, date, Locale.ENGLISH));
 ```
 
