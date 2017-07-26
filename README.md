@@ -12,11 +12,17 @@ Download
 
 Add the dependency to your module's build.gradle:
 ```groovy
-compile 'com.deimian86:time-lapse:0.0.5'
+compile 'com.deimian86:time-lapse:0.0.6'
 ```
 
 Usage
 ----
+
+```groovy
+TimeLapse.with(Context context)
+   .date(Date date)
+   .getLapse()
+```
 
 In code:
 ```groovy
