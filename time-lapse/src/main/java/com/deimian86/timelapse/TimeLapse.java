@@ -2,6 +2,8 @@ package com.deimian86.timelapse;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.support.annotation.NonNull;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -12,7 +14,57 @@ import java.util.Locale;
  */
 public class TimeLapse {
 
-    public String getLapse(Context context, Date startDate, Locale locale) {
+    private static volatile TimeLapse singleton = null;
+
+    private final Context context; // Required
+    private Date startDate;
+    private Locale locale;
+
+    private TimeLapse(TimeLapse.Builder builder) {
+        this.context = builder.context;
+        this.startDate = startDate;
+        this.locale = locale;
+    }
+
+    public static TimeLapse with(Context mContext) {
+        if (singleton == null) {
+            synchronized (TimeLapse.class) {
+                if (singleton == null) {
+                    if (mContext == null) {
+                        throw new IllegalStateException("context == null");
+                    }
+                    singleton = new Builder(mContext).build();
+                }
+            }
+        }
+        return singleton;
+    }
+
+    private static class Builder {
+
+        private final Context context;
+
+        private Builder(@NonNull Context context) {
+            this.context = context.getApplicationContext();
+        }
+
+        private TimeLapse build() {
+            return new TimeLapse(this);
+        }
+
+    }
+
+    public TimeLapse date(Date startDate) {
+        this.startDate = startDate;
+        return this;
+    }
+
+    public TimeLapse locale(Locale locale) {
+        this.locale = locale;
+        return this;
+    }
+
+    public String getLapse() {
         String mString = "";
         SimpleDateFormat txtFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date actualDate = new Date();

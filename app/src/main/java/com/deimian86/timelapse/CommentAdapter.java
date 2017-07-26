@@ -2,6 +2,7 @@ package com.deimian86.timelapse;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,8 +51,10 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
         Comment comment = commentList.get(position);
         holder.authorName.setText(comment.getAuthorName());
         holder.authorAvatar.setImageDrawable(comment.getAuthorAvatar());
-        holder.commentDate.setText(new TimeLapse().getLapse(mContext, comment.getCommentDate(), Locale.ENGLISH));
         holder.commentText.setText(comment.getCommentString());
+
+        String txt = TimeLapse.with(mContext).date(comment.getCommentDate()).getLapse();
+        holder.commentDate.setText(txt);
     }
 
     @Override
