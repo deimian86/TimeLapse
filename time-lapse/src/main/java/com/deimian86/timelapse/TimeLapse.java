@@ -22,8 +22,6 @@ public class TimeLapse {
 
     private TimeLapse(TimeLapse.Builder builder) {
         this.context = builder.context;
-        this.startDate = startDate;
-        this.locale = locale;
     }
 
     public static TimeLapse with(Context mContext) {

@@ -53,7 +53,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
         holder.authorAvatar.setImageDrawable(comment.getAuthorAvatar());
         holder.commentText.setText(comment.getCommentString());
 
-        String txt = TimeLapse.with(mContext).date(comment.getCommentDate()).getLapse();
+        String txt = TimeLapse.with(mContext).date(comment.getCommentDate()).locale(Locale.ENGLISH).getLapse();
         holder.commentDate.setText(txt);
     }
 
