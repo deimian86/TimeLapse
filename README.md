@@ -12,7 +12,7 @@ Download
 
 Add the dependency to your module's build.gradle:
 ```groovy
-compile 'com.deimian86:time-lapse:0.0.7'
+compile 'com.deimian86:time-lapse:0.0.8'
 ```
 
 Usage
